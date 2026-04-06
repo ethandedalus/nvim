@@ -1,0 +1,57 @@
+return {
+  "folke/noice.nvim",
+  opts = {
+    lsp = {
+      signature = { enabled = false },
+      progress = {
+        -- enabled = false,
+      },
+    },
+    presets = {
+      lsp_doc_border = false, -- add a border to hover docs and signature help
+    },
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "written",
+        },
+        opts = { skip = true },
+      },
+
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "~",
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = "notify",
+          find = "No information available",
+        },
+        opts = { skip = true },
+      },
+    },
+
+    views = {
+      border = {
+        style = "single",
+      },
+
+      cmdline_popup = {
+        border = {
+          style = "none",
+          padding = { 1, 2 },
+        },
+        filter_options = {},
+        win_options = {
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+        },
+      },
+    },
+  },
+}
