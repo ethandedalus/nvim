@@ -38,6 +38,7 @@ return {
       extension = {
         foo = "fooscript",
         rkt = "racket",
+        cc = "cpp",
       },
       filename = {
         [".foorc"] = "fooscript",

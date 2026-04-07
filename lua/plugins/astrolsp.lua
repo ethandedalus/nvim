@@ -44,6 +44,11 @@ return {
     -- customize language server configuration passed to `vim.lsp.config`
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     config = {
+      clangd = {
+        -- brew install llvm, then set your path to /opt/homebrew/Cellar/llvm/<version>/bin/clangd
+        cmd = { "/opt/homebrew/Cellar/llvm/22.1.2/bin/clangd" },
+      },
+
       -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
     },
     -- customize how language servers are attached
