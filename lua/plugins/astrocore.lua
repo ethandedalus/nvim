@@ -9,7 +9,14 @@ return {
   ---@type AstroCoreOpts
   opts = {
     autocmds = {
-      autohidetmuxstatus = {},
+      racket_k = {
+        {
+          event = "FileType",
+          pattern = "racket",
+          desc = "Override K to use LSP hover in Racket buffers",
+          callback = function() vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = true }) end,
+        },
+      },
     },
     -- Configure core features of AstroNvim
     features = {
@@ -30,6 +37,7 @@ return {
       -- see `:h vim.filetype.add` for usage
       extension = {
         foo = "fooscript",
+        rkt = "racket",
       },
       filename = {
         [".foorc"] = "fooscript",

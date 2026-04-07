@@ -38,6 +38,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       "ocamllsp",
+      "racket_langserver",
       -- "pyright"
     },
     -- customize language server configuration passed to `vim.lsp.config`
