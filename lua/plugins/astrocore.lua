@@ -84,6 +84,15 @@ return {
           desc = "Close buffer from tabline",
         },
 
+        ["<C-e>"] = {
+          function()
+            local harpoon = require "harpoon"
+            harpoon.ui:toggle_quick_menu(harpoon:list())
+          end,
+          desc = "Harpoon menu",
+        },
+        ["<leader>a"] = { function() require("harpoon"):list():add() end, desc = "Harpoon add" },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
